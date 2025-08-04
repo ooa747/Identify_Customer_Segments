@@ -6,6 +6,7 @@ Environment-specific settings should inherit from this base configuration.
 """
 
 import os
+import sys
 from pathlib import Path
 import environ
 
@@ -16,6 +17,9 @@ env = environ.Env(
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+# Add apps directory to Python path
+sys.path.insert(0, str(BASE_DIR / 'apps'))
 
 # Take environment variables from .env file
 environ.Env.read_env(BASE_DIR / '.env')
@@ -40,10 +44,10 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'rest_framework',
-    'corsheaders',
-    'drf_spectacular',
-    'import_export',
+    # 'rest_framework',
+    # 'corsheaders',
+    # 'drf_spectacular',
+    # 'import_export',
 ]
 
 LOCAL_APPS = [
@@ -63,9 +67,9 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

@@ -6,7 +6,6 @@ by other apps throughout the ERP system.
 """
 
 from django.db import models
-from django.contrib.auth import get_user_model
 from django.utils import timezone
 import uuid
 
@@ -142,7 +141,7 @@ class Note(BaseModel):
     title = models.CharField(max_length=200)
     content = models.TextField()
     author = models.ForeignKey(
-        get_user_model(),
+        'authentication.User',
         on_delete=models.CASCADE,
         related_name='notes'
     )
