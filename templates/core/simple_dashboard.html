@@ -1,0 +1,212 @@
+{% extends 'simple_base.html' %}
+{% load static %}
+
+{% block title %}Dashboard - ERP System{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="h3 mb-4">
+                <i class="fas fa-tachometer-alt"></i> ERP System Dashboard
+                <small class="text-muted">Welcome to your Enterprise Resource Planning system</small>
+            </h1>
+        </div>
+    </div>
+
+    <!-- Key Metrics Cards -->
+    <div class="row mb-4">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Products
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ total_products }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-boxes fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Pending Sales Orders
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ pending_sales_orders }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-shopping-cart fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Pending Purchase Orders
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ pending_purchase_orders }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-truck fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Low Stock Items
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-exclamation-triangle fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-cogs"></i> ERP System Features
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="text-center">
+                                <i class="fas fa-boxes fa-3x text-primary mb-3"></i>
+                                <h5>Inventory Management</h5>
+                                <p class="text-muted">Track products, manage stock levels, and handle warehouse operations.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="text-center">
+                                <i class="fas fa-shopping-cart fa-3x text-success mb-3"></i>
+                                <h5>Sales Management</h5>
+                                <p class="text-muted">Manage customers, process orders, and handle invoicing.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="text-center">
+                                <i class="fas fa-truck fa-3x text-info mb-3"></i>
+                                <h5>Purchasing</h5>
+                                <p class="text-muted">Handle supplier relationships and purchase order workflows.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="text-center">
+                                <i class="fas fa-calculator fa-3x text-warning mb-3"></i>
+                                <h5>Accounting</h5>
+                                <p class="text-muted">Financial management, journal entries, and reporting.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="text-center">
+                                <i class="fas fa-users fa-3x text-danger mb-3"></i>
+                                <h5>Human Resources</h5>
+                                <p class="text-muted">Employee management, payroll, and attendance tracking.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="text-center">
+                                <i class="fas fa-chart-bar fa-3x text-secondary mb-3"></i>
+                                <h5>Reporting</h5>
+                                <p class="text-muted">Comprehensive analytics and business intelligence reports.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Status -->
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-info-circle"></i> System Information
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Django Version:</span>
+                        <span class="badge bg-success">4.2.16</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Database:</span>
+                        <span class="badge bg-success">Connected</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Debug Mode:</span>
+                        <span class="badge bg-warning">Enabled</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span>Environment:</span>
+                        <span class="badge bg-info">Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-rocket"></i> Getting Started
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Configure Company Information
+                            <span class="badge bg-primary rounded-pill">1</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Set up User Accounts
+                            <span class="badge bg-primary rounded-pill">2</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Add Products and Categories
+                            <span class="badge bg-primary rounded-pill">3</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Configure Suppliers and Customers
+                            <span class="badge bg-primary rounded-pill">4</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

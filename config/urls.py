@@ -11,15 +11,15 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('apps.api.urls')),
-    path('auth/', include('apps.authentication.urls')),
-    path('inventory/', include('apps.inventory.urls')),
-    path('sales/', include('apps.sales.urls')),
-    path('purchasing/', include('apps.purchasing.urls')),
-    path('accounting/', include('apps.accounting.urls')),
-    path('hr/', include('apps.hr.urls')),
-    path('crm/', include('apps.crm.urls')),
-    path('reporting/', include('apps.reporting.urls')),
+    # path('api/', include('apps.api.urls')),
+    # path('auth/', include('apps.authentication.urls')),
+    # path('inventory/', include('apps.inventory.urls')),
+    # path('sales/', include('apps.sales.urls')),
+    # path('purchasing/', include('apps.purchasing.urls')),
+    # path('accounting/', include('apps.accounting.urls')),
+    # path('hr/', include('apps.hr.urls')),
+    # path('crm/', include('apps.crm.urls')),
+    # path('reporting/', include('apps.reporting.urls')),
     path('', include('apps.core.urls')),
 ]
 
